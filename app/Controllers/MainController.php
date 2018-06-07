@@ -8,4 +8,8 @@ class MainController extends CoreController {
         public function home() {
             echo("Hello World");
         }
+        // Method for contact page
+        public function contact() {
+            echo("Contact");
+        }
 }

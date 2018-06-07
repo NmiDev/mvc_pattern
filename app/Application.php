@@ -25,7 +25,9 @@ class Application {
      // Méthod for the roads
      public function defineRoads() {
         // Home
-        $this->router->map('GET', '/', 'MainController#home', 'main_home');
+        $this->router->map('GET', '/', 'MainController#home', 'home');
+        // Contact
+        $this->router->map('GET', '/contact', 'MainController#contact', 'contact');
     }
     // Method run for check the match and dispatch
     public function run() {
