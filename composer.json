@@ -10,9 +10,12 @@
     ],
     "minimum-stability": "stable",
     "require": {
-
+        "altorouter/altorouter": "^1.2",
+        "symfony/var-dumper": "^4.1"
     },
     "autoload": {
-        "psr-4": {"NmiDev\\": "app/"}
+        "psr-4": {
+            "NmiDev\\": "app/"
+        }
     }
 }
