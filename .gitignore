@@ -1,1 +1,6 @@
+# Configuration file
 /app/config.conf
+
+# Composer
+/vendor/
+composer.lock
