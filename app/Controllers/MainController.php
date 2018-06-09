@@ -11,7 +11,7 @@ class MainController extends CoreController {
                 'message' => 'Visiteur(s)'
             ];
             // Calling the method show for the view home
-            $this->show('home', $dataToViews);
+            $this->show('main/home', $dataToViews);
             
         }
         // Method for contact page
@@ -19,6 +19,6 @@ class MainController extends CoreController {
             // Data to send for the view
 
             // Calling the method show for the view home
-            $this->show('contact');
+            $this->show('main/contact');
         }
 }
