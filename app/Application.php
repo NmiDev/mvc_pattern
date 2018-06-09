@@ -19,15 +19,15 @@ class Application {
         $this->router = new AltoRouter();
         // Configuration of the Router
         $this->router->setBasePath($config['BASE_PATH']);
-
+        // Call method defineRoads
         $this->defineRoads();
     }
      // Méthod for the roads
      public function defineRoads() {
         // Home
-        $this->router->map('GET', '/', 'MainController#home', 'home');
+        $this->router->map('GET', '/', 'MainController#home', 'main_home');
         // Contact
-        $this->router->map('GET', '/contact', 'MainController#contact', 'contact');
+        $this->router->map('GET', '/contact', 'MainController#contact', 'main_contact');
     }
     // Method run for check the match and dispatch
     public function run() {
