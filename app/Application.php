@@ -56,8 +56,8 @@ class Application {
             CoreController::sendHttpError(404, 'Sonia - 404');
         }
     }
-    // Getter, need to catch the router in CoreController
-    public function getRouter() {
+    // Getter, need to catch the router in CoreController (type Altorouter)
+    public function getRouter() : Altorouter {
         return $this->router;
     }
 }

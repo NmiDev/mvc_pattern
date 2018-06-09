@@ -4,13 +4,15 @@ namespace NmiDev\Controllers;
 
 // Use Plates for views managment as Plates
 use League\Plates\Engine as Plates;
+// Use Application , we need to check the router transmission
+use NmiDev\Application;
 
 // Inherited class for all Controllers
 abstract class CoreController {
     // Need the template engine in this property for all the method
     protected $templateEngine;
     // Constructor, generate views engine with a parameter (objet Application with router)
-    public function __construct($app){
+    public function __construct(Application $app){
         // Create new Plates instance
         $this->templateEngine = new Plates(__DIR__.'/../Views');
         // Data for all the views, we need router
@@ -19,7 +21,7 @@ abstract class CoreController {
         ]);
     }
     // Method for showing the view
-    protected function show($templateName, $dataToViews=[]) {
+    protected function show(string $templateName, array $dataToViews=[]) {
         // Render a template
         echo $this->templateEngine->render($templateName, $dataToViews);
     }
