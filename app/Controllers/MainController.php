@@ -11,12 +11,20 @@ class MainController extends CoreController {
         public function home() {
             // Create new Plates instance
             $templates = new Plates(__DIR__.'/../Views');
-
+            // Data to send for the view
+            $dataToViews = [
+                'test' => 'Nicolas'
+            ];
             // Render a template
-            echo $templates->render('home', ['test' => 'Nicolas']);
+            echo $templates->render('home', $dataToViews);
         }
         // Method for contact page
         public function contact() {
-            echo("Contact");
+                // Create new Plates instance
+                $templates = new Plates(__DIR__.'/../Views');
+                // Data to send for the view
+
+                // Render a template
+                echo $templates->render('contact');
         }
 }

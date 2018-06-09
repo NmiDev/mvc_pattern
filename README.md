@@ -14,6 +14,7 @@ The purpose of this project is to show my capicties and skills. You can see what
 - Composer
 - Altorouter
 - Symfony Var dumper
+- League Plates
 
 *Softs and utilities :*
 - Visual Studio Code 1.24
