@@ -9,15 +9,19 @@ use League\Plates\Engine as Plates;
 abstract class CoreController {
     // Need the template engine in this property for all the method
     protected $templateEngine;
-    // Constructor, generate views engine
-    public function __construct(){
+    // Constructor, generate views engine with a parameter (objet Application with router)
+    public function __construct($app){
         // Create new Plates instance
-        $this->templatesEngine = new Plates(__DIR__.'/../Views');
+        $this->templateEngine = new Plates(__DIR__.'/../Views');
+        // Data for all the views, we need router
+        $this->templateEngine->addData([
+            'router' => $app->getRouter()
+        ]);
     }
     // Method for showing the view
     protected function show($templateName, $dataToViews=[]) {
         // Render a template
-        echo $this->templatesEngine->render($templateName, $dataToViews);
+        echo $this->templateEngine->render($templateName, $dataToViews);
     }
     // Method for showing an answer JSON during the Ajax request
     protected static function sendJson($data) {

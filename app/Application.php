@@ -45,8 +45,8 @@ class Application {
 
             // Add the namespace for Controllers (fully qualified class name)
             $controllerName = 'NmiDev\Controllers\\'.$controllerName;
-            // Instantiation of the new Controller
-            $controller = new $controllerName();
+            // Instantiation of the new Controller with parameter, this object
+            $controller = new $controllerName($this);
             // Call the method matching the road with road parameters
             $controller->$methodName($match['params']);
         }
@@ -55,5 +55,9 @@ class Application {
             // Call the method from CoreController for 404 status
             CoreController::sendHttpError(404, 'Sonia - 404');
         }
+    }
+    // Getter, need to catch the router in CoreController
+    public function getRouter() {
+        return $this->router;
     }
 }
