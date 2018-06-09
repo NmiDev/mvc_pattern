@@ -2,11 +2,22 @@
 // Namespace 
 namespace NmiDev\Controllers;
 
+// Use Plates for views managment as Plates
+use League\Plates\Engine as Plates;
+
 // Inherited class for all Controllers
 abstract class CoreController {
+    // Need the template engine in this property for all the method
+    protected $templateEngine;
+    // Constructor, generate views engine
+    public function __construct(){
+        // Create new Plates instance
+        $this->templatesEngine = new Plates(__DIR__.'/../Views');
+    }
     // Method for showing the view
-    protected function show() {
-        // TODO: 
+    protected function show($templateName, $dataToViews=[]) {
+        // Render a template
+        echo $this->templatesEngine->render($templateName, $dataToViews);
     }
     // Method for showing an answer JSON during the Ajax request
     protected static function sendJson($data) {
