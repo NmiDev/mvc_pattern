@@ -26,8 +26,16 @@ class Application {
      public function defineRoads() {
         // Home
         $this->router->map('GET', '/', 'MainController#home', 'main_home');
+        // History
+        $this->router->map('GET', '/history', 'MainController#history', 'main_history');
         // Contact
         $this->router->map('GET', '/contact', 'MainController#contact', 'main_contact');
+        // Legal
+        $this->router->map('GET', '/legal', 'MainController#legal', 'main_legal');
+        // Projects list
+        $this->router->map('GET', '/projects', 'ProjectController#list', 'project_list');
+        // Project details
+        $this->router->map('GET', '/project/[i:id]/[:slug]', 'ProjectController#details', 'project_details');
     }
     // Method run for check the match and dispatch
     public function run() {

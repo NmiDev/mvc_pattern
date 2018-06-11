@@ -1,4 +1,4 @@
-<?php $this->layout('layout', ['title' => 'Contact']) ?>
+<?php $this->layout('layout', ['title' => 'Formulaire de contact']) ?>
 
 <h1>Contact</h1>
 
