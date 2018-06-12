@@ -15,9 +15,10 @@ abstract class CoreController {
     public function __construct(Application $app){
         // Create new Plates instance
         $this->templateEngine = new Plates(__DIR__.'/../Views');
-        // Data for all the views, we need router
+        // Data for all the views, we need router and BASE_PATH
         $this->templateEngine->addData([
-            'router' => $app->getRouter()
+            'router' => $app->getRouter(),
+            'basePath' => $app->getConfig('BASE_PATH')
         ]);
     }
     // Method for showing the view

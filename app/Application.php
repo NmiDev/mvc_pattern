@@ -11,18 +11,20 @@ use NmiDev\Controllers\CoreController;
 class Application {
     // Property $router
     private $router;
+    // Property $config
+    private $config;
     // Method constructor
     public function __construct() {
         // Informations from confi.conf
-        $config = parse_ini_file(__DIR__ . '/config.conf');
+        $this->config = parse_ini_file(__DIR__ . '/config.conf');
         // Instantiation of the Router
         $this->router = new AltoRouter();
-        // Configuration of the Router
-        $this->router->setBasePath($config['BASE_PATH']);
+        // Configuration of the Router, we need the BASE_PATH
+        $this->router->setBasePath($this->getConfig('BASE_PATH'));
         // Call method defineRoads
         $this->defineRoads();
     }
-     // Méthod for the roads
+     // Method for the roads
      public function defineRoads() {
         // Home
         $this->router->map('GET', '/', 'MainController#home', 'main_home');
@@ -67,5 +69,12 @@ class Application {
     // Getter, need to catch the router in CoreController (type Altorouter)
     public function getRouter() : Altorouter {
         return $this->router;
+    }
+    // Getter, need to catch the config file in CoreController (we need the BASE_PATH)
+    public function getConfig(string $data) {
+        if (array_key_exists($data, $this->config)) {
+            return $this->config[$data];
+        }
+        return false;        
     }
 }

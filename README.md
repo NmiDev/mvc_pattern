@@ -4,7 +4,7 @@ The purpose of this project is to show my capicties and skills. You can see what
 
 ## More informations
 
-*Languages :* 
+*Languages :*
 - Html
 - CSS
 - JS
@@ -22,8 +22,8 @@ The purpose of this project is to show my capicties and skills. You can see what
 - Xampp
 
 ## Contact
-missiaen.nicolas@gmail.com  
-www.linkedin.com/in/nicolas-missiaen
+- missiaen.nicolas@gmail.com
+- www.linkedin.com/in/nicolas-missiaen
 
 ## Contributing
 1. Fork it
