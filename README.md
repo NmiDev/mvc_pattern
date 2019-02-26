@@ -1,6 +1,6 @@
 # Pattern : model - view - controller
 
-The purpose of this project is to show my capicties and skills. You can see what I learn for the pleasure or during my training and career path.
+The purpose of this project is to show my capicties and skills. You can see what I learn for the pleasure or during my training and career path. (Inspiration from [Ben 0'clock](https://oclock.io/), PHP course !)
 
 ## More informations
 
