@@ -1,4 +1,4 @@
-# My personal website
+# Pattern : model - view - controller
 
 The purpose of this project is to show my capicties and skills. You can see what I learn for the pleasure or during my training and career path.
 
